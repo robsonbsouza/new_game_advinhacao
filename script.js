@@ -18,11 +18,11 @@ var gameOverInput = document.getElementById("gameOverInput");
 var min = 1;
 var max = 5;
 var resposta = Math.floor(Math.random() * (max - min + 1)) + min;
-var som = new Audio('audio/moeda.mp3');
-var somBit = new Audio('audio/bit.mp3');
-var somErrou = new Audio('audio/errou.mp3');
-var somParabens = new Audio('audio/parabens.mp3');
-var somGameOver = new Audio('audio/gameOver.mp3');
+var som = new Audio('moeda.mp3');
+var somBit = new Audio('bit.mp3');
+var somErrou = new Audio('errou.mp3');
+var somParabens = new Audio('parabens.mp3');
+var somGameOver = new Audio('gameOver.mp3');
 
 somBit.loop = true;
 somBit.play();
