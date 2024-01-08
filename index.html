@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="flex-row">
+  <div id="caixa" class="box">
+    <p id="texto" class="text-center">Level</p>
+    <p id="numero" class="text-center">0</p>
+  </div>
+  
+  <div id="pontosBox" class="box">
+    <p id="pontosTexto" class="text-center">Pontos</p>
+    <p id="pontos" class="text-center">0</p>
+  </div>
+  
+  <div id="tentativasBox" class="box">
+    <p class="text-center">Tentativas</p>
+    <p id="tentativas" class="text-center">5</p>
+  </div>
+</div>
+
+<div class="flex-column">
+  <p id="intervalo"></p>
+  <input type="text" id="entrada" placeholder="Digite um número">
+  <button onclick="verificar()">Verificar</button>
+  <p id="mensagem"></p>
+  <div id="gameOver" style="display: none;">
+    <p>Para iniciar um novo jogo digite 1, para encerrar o jogo digite 2:</p>
+    <input type="text" id="gameOverInput" placeholder="Digite um número">
+    <button onclick="gameOver()">Enviar</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
