@@ -24,8 +24,12 @@ var somErrou = new Audio('errou.mp3');
 var somParabens = new Audio('parabens.mp3');
 var somGameOver = new Audio('gameOver.mp3');
 
+ativarsom = confirm('SEJA BEM VINDO(a) AO JOGO DE ADIVINHAÇÃO! \n\n CLIQUE EM OK PARA ATIVAR O SOM OU CANCELAR PARA DESATIVAR.');
+
+if (ativarsom == true) {
 somBit.loop = true;
 somBit.play();
+}
 
 intervalo.innerText = "O numero secreto está entre " + min + " e " + max + ":";
 intervalo.style.fontSize = "45px"; // Altere o tamanho da fonte para 20px
@@ -96,9 +100,11 @@ function verificar() {
       }, 1000);
     }
   } else {
-    mensagem.innerText = "Você não tem mais tentativas!";
+    mensagem.innerText = "Você não tem mais tentativas! \n\n Mais pode iniciar um novo jogo digite 1 na caixa branca abaixo ou 2 para finalizar o jogo.";
     mensagem.style.color = 'white';
     mensagem.style.fontSize = '40px';
+    mensagem.style.textAlign = 'center';
+    mensagem.style.lineHeight = '0.6'
     somGameOver.play();
     somBit.pause();
     gameOverDiv.style.display = 'block';

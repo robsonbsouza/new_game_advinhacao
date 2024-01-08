@@ -72,3 +72,8 @@ body {
   position: relative;
 }
 
+.enviar {
+  display: inline-block;
+  height: 54px;
+  margin-bottom: 15px;
+}
