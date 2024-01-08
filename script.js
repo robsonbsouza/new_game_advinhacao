@@ -67,8 +67,9 @@ function verificar() {
       tentativasExtras += pos;
       tentativas += tentativasExtras;
       tentativasNum.innerText = tentativas;
-      alert("Parabéns! Você ganhou " + tentativasExtras + " tentativas extras!");
       somParabens.play();
+      alert("Parabéns! Você ganhou " + tentativasExtras + " tentativas extras!");
+      
       document.getElementById('entrada').value = "";
     } else {
       tentativas -= 1;
