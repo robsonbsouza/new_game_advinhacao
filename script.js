@@ -29,6 +29,7 @@ somBit.play();
 
 intervalo.innerText = "O numero secreto está entre " + min + " e " + max + ":";
 intervalo.style.fontSize = "45px"; // Altere o tamanho da fonte para 20px
+intervalo.style.color = 'yellow'
 
 
 function verificar() {
@@ -62,6 +63,7 @@ function verificar() {
       max = min + 9 + pos * 5;
       resposta = Math.floor(Math.random() * (max - min + 1)) + min;
       intervalo.innerText = "O numero secreto está entre " + min + " e " + max + ":";
+      intervalo.style.color = 'yellow'
       tentativasExtras += pos;
       tentativas += tentativasExtras;
       tentativasNum.innerText = tentativas;
@@ -72,13 +74,13 @@ function verificar() {
       tentativas -= 1;
       tentativasNum.innerText = tentativas;
       if(entrada.value > resposta) {
-        mensagem.innerText = "Você errou! O número digitado é maior que o numero secreto.";
+        mensagem.innerText = "Você errou! Seu numero é maior que o numero secreto.";
         document.getElementById('entrada').value = "";
       } else {
-        mensagem.innerText = "Você errou! O número digitado é menor que o numero secreto.";
+        mensagem.innerText = "Você errou! Seu numero é menor que o numero secreto.";
         document.getElementById('entrada').value = "";
       }
-      mensagem.style.color = 'red';
+      mensagem.style.color = 'white';
       mensagem.style.fontSize = '40px';
       somErrou.play();
       setTimeout(function() {
@@ -94,13 +96,13 @@ function verificar() {
     }
   } else {
     mensagem.innerText = "Você não tem mais tentativas!";
-    mensagem.style.color = 'red';
+    mensagem.style.color = 'white';
     mensagem.style.fontSize = '40px';
     somGameOver.play();
     somBit.pause();
     gameOverDiv.style.display = 'block';
     setInterval(function() {
-      document.body.style.backgroundColor = document.body.style.backgroundColor == 'white' ? 'red' : 'white';
+      document.body.style.backgroundColor = document.body.style.backgroundColor == 'red';
     }, 500);
   }
 }
