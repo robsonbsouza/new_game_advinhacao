@@ -27,7 +27,7 @@ var somGameOver = new Audio('gameOver.mp3');
 somBit.loop = true;
 somBit.play();
 
-intervalo.innerText = "Digite um número entre " + min + " e " + max + ":";
+intervalo.innerText = "O numero secreto está entre " + min + " e " + max + ":";
 intervalo.style.fontSize = "45px"; // Altere o tamanho da fonte para 20px
 
 
@@ -61,25 +61,28 @@ function verificar() {
       min = max + 1;
       max = min + 9 + pos * 5;
       resposta = Math.floor(Math.random() * (max - min + 1)) + min;
-      intervalo.innerText = "Digite um número entre" + min + " e " + max + ":";
+      intervalo.innerText = "O numero secreto está entre " + min + " e " + max + ":";
       tentativasExtras += pos;
       tentativas += tentativasExtras;
       tentativasNum.innerText = tentativas;
       alert("Parabéns! Você ganhou " + tentativasExtras + " tentativas extras!");
       somParabens.play();
+      document.getElementById('entrada').value = "";
     } else {
       tentativas -= 1;
       tentativasNum.innerText = tentativas;
       if(entrada.value > resposta) {
-        mensagem.innerText = "Você errou! O número digitado é maior.";
+        mensagem.innerText = "Você errou! O número digitado é maior que o numero secreto.";
+        document.getElementById('entrada').value = "";
       } else {
-        mensagem.innerText = "Você errou! O número digitado é menor.";
+        mensagem.innerText = "Você errou! O número digitado é menor que o numero secreto.";
+        document.getElementById('entrada').value = "";
       }
       mensagem.style.color = 'red';
-      mensagem.style.fontSize = '20px';
+      mensagem.style.fontSize = '40px';
       somErrou.play();
       setTimeout(function() {
-        mensagem.style.fontSize = '16px';
+        mensagem.style.fontSize = '30px';
       }, 1000);
       tentativasBox.style.transform = 'scale(1.5)';
       tentativasBox.style.transition = 'transform 1s';
@@ -92,6 +95,7 @@ function verificar() {
   } else {
     mensagem.innerText = "Você não tem mais tentativas!";
     mensagem.style.color = 'red';
+    mensagem.style.fontSize = '40px';
     somGameOver.play();
     somBit.pause();
     gameOverDiv.style.display = 'block';
@@ -105,9 +109,7 @@ function gameOver() {
   if(gameOverInput.value == '1') {
     location.reload();
   } else if(gameOverInput.value == '2') {
-    document.body.innerHTML = "<h1 style='text-align:center;'>Game Over</h1>";
-    setInterval(function() {
-      document.body.style.backgroundColor = document.body.style.backgroundColor == 'white' ? 'red' : 'white';
-    }, 500);
+    document.body.innerHTML = "<h1 style='text-align:center;'>Game Over, obrigado por jogar!</h1>";
+    
   }
 }
