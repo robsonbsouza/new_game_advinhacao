@@ -28,6 +28,8 @@ somBit.loop = true;
 somBit.play();
 
 intervalo.innerText = "Digite um número entre " + min + " e " + max + ":";
+intervalo.style.fontSize = "45px"; // Altere o tamanho da fonte para 20px
+
 
 function verificar() {
   if(tentativas > 0) {
@@ -59,7 +61,7 @@ function verificar() {
       min = max + 1;
       max = min + 9 + pos * 5;
       resposta = Math.floor(Math.random() * (max - min + 1)) + min;
-      intervalo.innerText = "Digite um número entre " + min + " e " + max + ":";
+      intervalo.innerText = "Digite um número entre" + min + " e " + max + ":";
       tentativasExtras += pos;
       tentativas += tentativasExtras;
       tentativasNum.innerText = tentativas;
